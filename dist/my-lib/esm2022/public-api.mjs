@@ -1,0 +1,6 @@
+/*
+ * Public API Surface of my-lib
+ */
+export * from './lib/hello/hello.component';
+export * from './lib/my-lib.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL215LWxpYi9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsNkJBQTZCLENBQUM7QUFDNUMsY0FBYyxxQkFBcUIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXHJcbiAqIFB1YmxpYyBBUEkgU3VyZmFjZSBvZiBteS1saWJcclxuICovXHJcblxyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9oZWxsby9oZWxsby5jb21wb25lbnQnO1xyXG5leHBvcnQgKiBmcm9tICcuL2xpYi9teS1saWIubW9kdWxlJzsiXX0=
