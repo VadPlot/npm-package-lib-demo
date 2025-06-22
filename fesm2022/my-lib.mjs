@@ -3,6 +3,14 @@ import { Component, Input, NgModule } from '@angular/core';
 
 class HelloComponent {
     name = '';
+    postMessage() {
+        window.postMessage(JSON.stringify({
+            event: "promotions",
+            data: {},
+            requestId: '00-575d6b495c1355ec5bf66ae432b601ef-2b0d7c6e513397e2-01',
+            action: 'promise'
+        }), '*');
+    }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: HelloComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
     static ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.2.13", type: HelloComponent, selector: "lib-hello", inputs: { name: "name" }, ngImport: i0, template: `<p>Привет, {{ name }}!</p>`, isInline: true });
 }
