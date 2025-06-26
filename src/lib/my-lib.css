@@ -1,0 +1,4 @@
+/* src/lib/my-lib.css */
+@import 'swiper/swiper.css';
+@import 'swiper/modules/navigation/navigation.css';
+@import 'swiper/modules/pagination/pagination.css';

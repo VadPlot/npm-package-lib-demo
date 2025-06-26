@@ -1,6 +1,3 @@
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import * as i0 from "@angular/core";
 export declare class HelloComponent {
     name: string;
