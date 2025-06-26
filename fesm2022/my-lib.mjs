@@ -1,3 +1,6 @@
+import 'swiper/swiper.css';
+import 'swiper/modules/navigation.css';
+import 'swiper/modules/pagination.css';
 import * as i0 from '@angular/core';
 import { Component, Input, NgModule } from '@angular/core';
 import Swiper from 'swiper';
