@@ -1,8 +1,21 @@
 import * as i0 from '@angular/core';
 import { Component, Input, NgModule } from '@angular/core';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 class HelloComponent {
     name = '';
+    ngOnInit() {
+        // init Swiper:
+        const swiper = new Swiper('.swiper', {
+            // configure Swiper to use modules
+            modules: [Navigation, Pagination],
+        });
+        console.log(swiper);
+    }
     postHelloMessage() {
         (parent || window).postMessage(JSON.stringify({
             event: "promotions",
