@@ -2,6 +2,7 @@ import * as i0 from '@angular/core';
 import { Component, Input, NgModule } from '@angular/core';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
+import axios from 'axios';
 
 class HelloComponent {
     name = '';
@@ -12,6 +13,15 @@ class HelloComponent {
             modules: [Navigation, Pagination],
         });
         console.log(swiper);
+        axios.get('https://jsonplaceholder.typicode.com/users')
+            .then((response) => {
+            // Успешный ответ: выведем список пользователей
+            console.log('Список пользователей:', response.data);
+        })
+            .catch((error) => {
+            // Обработка ошибок
+            console.error('Произошла ошибка при запросе:', error);
+        });
     }
     postHelloMessage() {
         (parent || window).postMessage(JSON.stringify({
