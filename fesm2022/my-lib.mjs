@@ -1,8 +1,31 @@
 import * as i0 from '@angular/core';
-import { Component, Input, Injectable, NgModule } from '@angular/core';
+import { Injectable, Component, Input, NgModule } from '@angular/core';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import axios from 'axios';
+
+var WidgetType;
+(function (WidgetType) {
+    WidgetType["RESP"] = "RESP";
+    WidgetType["WD"] = "WD";
+    WidgetType["VADTEST"] = "VadzimTest";
+})(WidgetType || (WidgetType = {}));
+class FactoryService {
+    pageWithTemplateWidgetsMap = {
+        'Vadzim.Echo': {
+            '1.0': HelloComponent,
+        },
+    };
+    createComponentType(widgetId, version) {
+        return this.pageWithTemplateWidgetsMap[widgetId]?.[version] || null;
+    }
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, providedIn: 'root' });
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, decorators: [{
+            type: Injectable,
+            args: [{ providedIn: 'root' }]
+        }] });
 
 class HelloComponent {
     name = '';
@@ -12,7 +35,7 @@ class HelloComponent {
         version: '',
         inlineStyle: '',
         title: '',
-        widgetType: '',
+        widgetType: WidgetType.RESP,
         config: null,
     };
     ngOnInit() {
@@ -52,23 +75,6 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
                 type: Input
             }] } });
 
-class FactoryService {
-    pageWithTemplateWidgetsMap = {
-        'Vadzim.Echo': {
-            '1.0': HelloComponent,
-        },
-    };
-    createComponentType(widgetId, version) {
-        return this.pageWithTemplateWidgetsMap[widgetId]?.[version] || null;
-    }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, providedIn: 'root' });
-}
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, decorators: [{
-            type: Injectable,
-            args: [{ providedIn: 'root' }]
-        }] });
-
 class MyLibModule {
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
     static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, declarations: [HelloComponent], exports: [HelloComponent] });
@@ -95,5 +101,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
  * Generated bundle index. Do not edit.
  */
 
-export { FactoryService, HelloComponent, MyLibModule };
+export { FactoryService, HelloComponent, MyLibModule, WidgetType };
 //# sourceMappingURL=my-lib.mjs.map
