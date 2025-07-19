@@ -10,7 +10,10 @@ class HelloComponent {
         elementId: '',
         widgetId: '',
         version: '',
-        config: null
+        inlineStyle: '',
+        title: '',
+        widgetType: '',
+        config: null,
     };
     ngOnInit() {
         // init Swiper:
@@ -50,13 +53,13 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
             }] } });
 
 class FactoryService {
-    PAGE_WITH_TEMPLATE_WIDGETS = {
+    pageWithTemplateWidgetsMap = {
         'Vadzim.Echo': {
             '1.0': HelloComponent,
         },
     };
-    getWidgetComponentType(widgetSettings) {
-        return this.PAGE_WITH_TEMPLATE_WIDGETS[widgetSettings.widgetId]?.[widgetSettings.version];
+    createComponentType(widgetId, version) {
+        return this.pageWithTemplateWidgetsMap[widgetId]?.[version] || null;
     }
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
     static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, providedIn: 'root' });

@@ -1,13 +1,8 @@
+import { IWidgetSettings } from '../types';
 import * as i0 from "@angular/core";
-export interface WidgetSettings {
-    elementId: string;
-    widgetId: string;
-    version: string;
-    config: object | null;
-}
 export declare class HelloComponent {
     name: string;
-    widgetSettings: WidgetSettings;
+    widgetSettings: IWidgetSettings;
     ngOnInit(): void;
     postHelloMessage(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<HelloComponent, never>;
