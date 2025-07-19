@@ -1,5 +1,5 @@
 import { Type } from '@angular/core';
-import { WidgetType } from './services/factory.service';
+import { WidgetType } from './services/widgetType';
 export interface IPageWithTemplateWidget {
     widgetSettings: IWidgetSettings;
 }
