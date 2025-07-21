@@ -59,7 +59,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
                 type: Input
             }] } });
 
-class FactoryService {
+class PageWithTemplateComponentFactory {
     pageWithTemplateWidgetsMap = {
         'Vadzim.Echo': {
             '1.0': HelloComponent,
@@ -68,10 +68,10 @@ class FactoryService {
     createComponentType(widgetId, version) {
         return this.pageWithTemplateWidgetsMap[widgetId]?.[version] || null;
     }
-    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
-    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, providedIn: 'root' });
+    static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: PageWithTemplateComponentFactory, deps: [], target: i0.ɵɵFactoryTarget.Injectable });
+    static ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: PageWithTemplateComponentFactory, providedIn: 'root' });
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: FactoryService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: PageWithTemplateComponentFactory, decorators: [{
             type: Injectable,
             args: [{ providedIn: 'root' }]
         }] });
@@ -79,12 +79,12 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
 class MyLibModule {
     static ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule });
     static ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, declarations: [HelloComponent], exports: [HelloComponent] });
-    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, providers: [FactoryService] });
+    static ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, providers: [PageWithTemplateComponentFactory] });
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImport: i0, type: MyLibModule, decorators: [{
             type: NgModule,
             args: [{
-                    providers: [FactoryService],
+                    providers: [PageWithTemplateComponentFactory],
                     declarations: [HelloComponent],
                     imports: [],
                     exports: [HelloComponent]
@@ -102,5 +102,5 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.2.13", ngImpo
  * Generated bundle index. Do not edit.
  */
 
-export { FactoryService, HelloComponent, MyLibModule };
+export { HelloComponent, MyLibModule, PageWithTemplateComponentFactory };
 //# sourceMappingURL=my-lib.mjs.map
